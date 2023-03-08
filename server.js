@@ -48,7 +48,7 @@ const app = express();
 // });
 
 var cors = require("cors");
-app.use(cors());
+app.use(cors({ origin:["http:localhost:3000","https://mern-task-app.onrender.com"]}));
 // app.use(cors({ origin: "http://localhost:3000" }));
 // use it before all route definitions
 // app.use(function (request, response, next) {
