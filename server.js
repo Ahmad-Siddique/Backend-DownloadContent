@@ -50,7 +50,11 @@ const app = express();
 var cors = require("cors");
 app.use(
   cors({
-    origin: ["http:localhost:3000", "https://mern-task-app-qfj3.onrender.com"],
+    origin: [
+      "http:localhost:3000",
+      "https://mern-task-app-qfj3.onrender.com",
+      "https://mern-stack-app-come-to-me.onrender.com",
+    ],
   })
 );
 // app.use(cors({ origin: "http://localhost:3000" }));
