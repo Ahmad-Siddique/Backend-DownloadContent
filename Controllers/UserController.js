@@ -198,6 +198,29 @@ const GetDownloadActivity = asyncHandler(async (req, res) => {
   }
 });
 
+const GetDownloadActivityPerUser = asyncHandler(async (req, res) => {
+  const {email} = req.body
+  const activitycreate = await downloadActivity.find({email});
+
+  if (activitycreate) {
+    res.json(activitycreate);
+  }
+});
+
+const DownloadActivityDelete = asyncHandler(async (req, res) => {
+  console.log("Req accepted");
+  const id = req.params.id;
+  console.log(req.body);
+  const user = await downloadActivity.findById(id);
+  console.log(user);
+  if (user) {
+    await user.remove();
+    res.json({ message: "User has been removed" });
+  } else {
+    throw new Error("Error Occured. User Not deleted");
+  }
+});
+
 
 module.exports = {
   userRegisterController,
@@ -209,4 +232,6 @@ module.exports = {
   userActivityAllController,
   DownloadActivity,
   GetDownloadActivity,
+  GetDownloadActivityPerUser,
+  DownloadActivityDelete,
 };

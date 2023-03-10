@@ -16,6 +16,11 @@ router.get("/api/user/getoneuser/:id", Controllers.userOneController);
 router.get("/api/user/useractivity", Controllers.userActivityAllController);
 router.post("/api/user/downloadactivity", Controllers.DownloadActivity);
 router.get("/api/user/downloadactivity", Controllers.GetDownloadActivity);
-
+router.post("/api/user/downloadactivityuser", Controllers.GetDownloadActivityPerUser);
+router.post("/api/user/downloadactivityuser", Controllers.GetDownloadActivityPerUser);
+router.post(
+  "/api/user/downloadactivitydelete/:id",
+  Controllers.DownloadActivityDelete
+);
 
 module.exports=router

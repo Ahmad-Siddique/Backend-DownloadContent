@@ -5,7 +5,7 @@ const downloadactivity = new Schema(
   {
     name: {
       type: String,
-      required: true,
+      
     },
     email: {
       type: String,
@@ -13,11 +13,11 @@ const downloadactivity = new Schema(
     },
     activity: {
       type: String,
-      required: true,
+      
     },
     time: {
       type: String,
-      required: true,
+      
     },
   },
   { timestamps: true }
