@@ -49,6 +49,8 @@ router.post("/api/transfertask/:id", TaskControllers.TransferTaskController);
 router.get("/api/usertransfertask/:id", TaskControllers.TaskUserTransfer);
 router.get("/api/taskrecurring", TaskControllers.TaskRecurringTask);
 router.get("/api/sendfile/:id", TaskControllers.TaskSendFile);
+router.get("/api/allcontent", TaskControllers.ContentAllController);
+router.post("/api/deletecontent/:id", TaskControllers.ContentDeleteController);
 
 
 module.exports = router;

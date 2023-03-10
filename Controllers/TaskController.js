@@ -628,6 +628,32 @@ const TaskSendFile = async (req,res) => {
 };
 
 
+const ContentAllController = asyncHandler(async (req, res) => {
+  console.log("Get Req accepted Task");
+  const Task = await taskModel.find().sort({ createdAt: -1 });
+  console.log(Task);
+  if (Task) {
+    res.json(Task);
+  } else {
+    res.status(400);
+    throw new Error("No Tasks Available");
+  }
+});
+
+
+const ContentDeleteController = asyncHandler(async (req, res) => {
+  console.log("Req accepted");
+  const id = req.params.id;
+  console.log(req.body);
+  const Task = await taskModel.findById(id);
+  console.log(Task);
+  if (Task) {
+    await Task.remove();
+    res.json({ message: "Content has been removed" });
+  } else {
+    throw new Error("Error Occured. Task Not deleted");
+  }
+});
 
 
 
@@ -655,4 +681,6 @@ module.exports = {
   TaskRecurringTask,
   TaskUpdateFileController,
   TaskSendFile,
+  ContentAllController,
+  ContentDeleteController,
 };

@@ -25,7 +25,7 @@ const app = express();
 
 // app.use(function (req, res, next) {
 //   // Website you wish to allow to connect
-//   res.setHeader("Access-Control-Allow-Origin", "http://localhost:5000");
+//   res.setHeader("Access-Control-Allow-Origin", "https://coming-to-me-from-backend.onrender.com");
 
 //   // Request methods you wish to allow
 //   res.setHeader(
@@ -51,7 +51,7 @@ var cors = require("cors");
 app.use(
   cors({
     origin: [
-      "http:localhost:3000",
+      "http://localhost:3000",
       "https://mern-task-app-qfj3.onrender.com",
       "https://mern-stack-app-come-to-me.onrender.com",
     ],
@@ -134,7 +134,6 @@ app.use(taskRouter);
 // console.log(gg);
 // console.log(path.join(gg, "app/frontend", "build", "index.html"));
 // console.log(path.join(gg, "app/frontend/build"));
-
 
 // if (serverstate === "Chilling") {
 //   app.use(express.static(path.join(gg, "template_react", "build")));
